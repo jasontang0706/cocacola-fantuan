@@ -3,6 +3,10 @@
 A consumer-facing, interactive collectibles campaign website concept. Open `index.html` in any modern browser. No build tools are required.
 
 Features:
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 - Responsive collectible-figurine gallery (8 original character concepts)
 - Collected/missing filters and individual character profiles
 - Animated completion progress bar and unlockable milestone tiers
