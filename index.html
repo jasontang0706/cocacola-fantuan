@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#e52c34" />
+    <title>Coca-Cola × Fantuan | Little Moments Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a href="#home" class="brand" aria-label="Fantuan x Coca-Cola home">
+          <img
+            class="brand-fantuan-logo"
+            src="assets/fantuan-logo.png"
+            alt="Fantuan Logo"
+          />
+
+          <span class="brand-divider">×</span>
+
+          <img
+            class="brand-coke-logo"
+            src="assets/coca-cola-logo.webp"
+            alt="Coca-Cola Logo"
+          />
+        </a>
+
+        <nav class="topnav" aria-label="Main navigation">
+          <a href="#collection" class="active">My Collection</a>
+          <a href="#rewards">Rewards</a>
+          <a href="#how-it-works">How it works</a>
+        </nav>
+
+        <div class="profile">
+          <a class="primary" href="#collection"> Sign Up </a>
+          <button class="hamb" id="menuBtn" aria-label="Open navigation">
+            ☰
+          </button>
+        </div>
+      </header>
+      <section class="hero" id="home">
+        <div>
+          <h1>A little magic<br /><em>in every meal.</em></h1>
+          <div class="hero-actions">
+            <a class="primary" href="#collection"
+              >Explore my collection <span>↗</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Three colorful collectible figurines">
+          <span class="sparkle sp1">✳</span><span class="sparkle sp2">✦</span>
+          <div class="floating float1">✨ 8 to collect</div>
+          <div class="floating float2">❤️ Your new little buddies</div>
+          <div>
+            <img src="assets/snake.png" alt="A gray cat sleeping on a couch" />
+          </div>
+        </div>
+      </section>
+      <section class="stats">
+        <div class="status">
+          <div>
+            <div class="stat-heading"><span>🏆</span> Your Collection</div>
+            <div class="progress-meta">
+              <span id="progressLabel">3 of 8 collected</span
+              ><span class="red" id="progressPct">38% complete</span>
+            </div>
+            <div
+              class="track"
+              role="progressbar"
+              aria-label="Collection progress"
+              aria-valuemin="0"
+              aria-valuemax="8"
+              aria-valuenow="3"
+              id="progressTrack"
+            >
+              <div class="fill" id="progressFill" style="width: 37.5%"></div>
+            </div>
+          </div>
+          <div class="milestone">
+            <span>🎁</span>
+            <div>
+              <strong id="nextReward">Next reward: 4 figurines</strong
+              ><span id="nextRewardHint">Just 1 more to go!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <main class="main" id="collection">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Your little universe</div>
+            <h2>
+              Meet the collection <span style="color: var(--red)">✳</span>
+            </h2>
+            <p>Every character has a personality. Who will you collect next?</p>
+          </div>
+          <div class="tabs" role="group" aria-label="Filter collection">
+            <button class="tab" data-filter="all" aria-pressed="true">
+              All (8)</button
+            ><button class="tab" data-filter="owned" aria-pressed="false">
+              Collected</button
+            ><button class="tab" data-filter="locked" aria-pressed="false">
+              Missing
+            </button>
+          </div>
+        </div>
+        <div class="grid" id="collectionGrid"></div>
+        <div class="lower" id="rewards">
+          <div class="quest">
+            <span class="quest-tag">THIS WEEK'S MISSION</span>
+            <h3>Order. Sip. Unbox. 🎉</h3>
+            <p>
+              Turn your next Fantuan meal into a collectible moment. Each
+              participating order can bring you closer to another mystery
+              friend.
+            </p>
+            <button class="quest-btn" id="missionBtn">
+              Redeem demo mystery box ↗
+            </button>
+          </div>
+          <div class="rewards">
+            <div class="kicker">Collector perks</div>
+            <h3>Rewards worth collecting</h3>
+            <div class="reward-line">
+              <div class="reward-icon">🥤</div>
+              <div>
+                <strong>First little friend</strong>
+                <p>Unlock a welcome bonus at 1 figurine</p>
+              </div>
+              <span id="reward1" class="check">✓ Unlocked</span>
+            </div>
+            <div class="reward-line">
+              <div class="reward-icon">🎟️</div>
+              <div>
+                <strong>Halfway there!</strong>
+                <p>Reach 4 figurines for a special reward</p>
+              </div>
+              <span id="reward4" class="pending">🔒 Locked</span>
+            </div>
+            <div class="reward-line">
+              <div class="reward-icon">🎁</div>
+              <div>
+                <strong>Ultimate collector</strong>
+                <p>Complete all 8 for the grand prize</p>
+              </div>
+              <span id="reward8" class="pending">🔒 Locked</span>
+            </div>
+            <div class="smallprint">
+              Reward descriptions are concept placeholders, not actual offers.
+            </div>
+          </div>
+        </div>
+      </main>
+      <section class="how" id="how-it-works">
+        <div class="kicker">It's easy as 1, 2, 3</div>
+        <h2>How to join the fun</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">01</div>
+            <h3>Order your favourites</h3>
+            <p>
+              Choose eligible Coca-Cola products with your Fantuan delivery
+              order during the promotion.
+            </p>
+          </div>
+          <div class="step">
+            <div class="num">02</div>
+            <h3>Discover a surprise</h3>
+            <p>
+              Use the code included with your eligible order to reveal a mystery
+              figurine in your virtual collection.
+            </p>
+          </div>
+          <div class="step">
+            <div class="num">03</div>
+            <h3>Complete & celebrate</h3>
+            <p>
+              Watch your collection grow, reach new milestones, and unlock
+              special collector perks.
+            </p>
+          </div>
+        </div>
+        <p class="smallprint">
+          Student concept prototype. Not an official Coca-Cola or Fantuan
+          promotion. Codes, prizes, and eligibility are demonstration-only.
+        </p>
+      </section>
+      <footer class="footer">
+        <div class="brand">
+          <span class="brand-coke">Coca-Cola</span><span class="brand-x">×</span
+          ><span class="brand-fantuan">Fantuan</span>
+        </div>
+        <span>Made for little moments and big smiles. · Concept prototype</span
+        ><button class="switch" id="resetBtn">Reset demo progress</button>
+      </footer>
+    </div>
+    <dialog id="detailsDialog">
+      <button class="modal-close" id="closeDetails" aria-label="Close">
+        ×
+      </button>
+      <div class="modal-body" id="detailsBody"></div>
+    </dialog>
+    <dialog id="scanDialog">
+      <button class="modal-close" id="closeScan" aria-label="Close">×</button>
+      <div class="modal-body">
+        <div class="kicker">A little surprise</div>
+        <h2>Unlock a mystery buddy</h2>
+        <p>
+          In the real experience, you'd redeem a unique code from an eligible
+          Fantuan order. Try the simulated unboxing below!
+        </p>
+        <div class="scanbox">🎁<small>DEMO MYSTERY BOX</small></div>
+        <button class="primary" style="width: 100%" id="revealBtn">
+          Reveal my figurine ✨
+        </button>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>
+      const characters = [
+        {
+          id: 1,
+          name: "Coco Bunny",
+          tag: "The sunshine friend",
+          kind: "red",
+          acc: "🎀",
+          bg: "#ffe2df",
+          rare: false,
+        },
+        {
+          id: 2,
+          name: "Peachy Pop",
+          tag: "The sweet daydreamer",
+          kind: "pink",
+          acc: "🍑",
+          bg: "#ffe8ed",
+          rare: false,
+        },
+        {
+          id: 3,
+          name: "Fizz Fox",
+          tag: "The curious explorer",
+          kind: "orange",
+          acc: "⚡",
+          bg: "#fff0d5",
+          rare: false,
+        },
+        {
+          id: 4,
+          name: "Bubble Bear",
+          tag: "The cozy companion",
+          kind: "blue",
+          acc: "🫧",
+          bg: "#dff2ff",
+          rare: false,
+        },
+        {
+          id: 5,
+          name: "Matcha Mochi",
+          tag: "The mellow foodie",
+          kind: "green",
+          acc: "🍃",
+          bg: "#e3f4e2",
+          rare: false,
+        },
+        {
+          id: 6,
+          name: "Luna Star",
+          tag: "The midnight dreamer",
+          kind: "purple",
+          acc: "🌙",
+          bg: "#ede6ff",
+          rare: false,
+        },
+        {
+          id: 7,
+          name: "Lucky Lantern",
+          tag: "The celebration buddy",
+          kind: "gold",
+          acc: "🏮",
+          bg: "#fff3cc",
+          rare: true,
+        },
+        {
+          id: 8,
+          name: "Golden Cola",
+          tag: "The legendary collector",
+          kind: "gold",
+          acc: "👑",
+          bg: "#fff0bd",
+          rare: true,
+        },
+      ];
+      const STORE = "coke-fantuan-collector-v1";
+      let owned = new Set([1, 2, 3]);
+      let filter = "all";
+      let points = 250;
+      try {
+        const s = JSON.parse(localStorage.getItem(STORE));
+        if (s && Array.isArray(s.owned)) {
+          owned = new Set(
+            s.owned.filter((id) => characters.some((c) => c.id === id)),
+          );
+          points = Number.isFinite(s.points) ? s.points : 250;
+        }
+      } catch (e) {}
+      function persist() {
+        try {
+          localStorage.setItem(
+            STORE,
+            JSON.stringify({ owned: [...owned], points }),
+          );
+        } catch (e) {}
+      }
+      function toy(c) {
+        return `<div class="toy" data-kind="${c.kind}" role="img" aria-label="${c.name} figurine"><div class="ears"></div><div class="body"></div><div class="arm left"></div><div class="arm right"></div><div class="leg left"></div><div class="leg right"></div><div class="head"><div class="eye left"></div><div class="eye right"></div><div class="cheek left"></div><div class="cheek right"></div><div class="mouth"></div></div><div class="accessory" aria-hidden="true">${c.acc}</div></div>`;
+      }
+      document.getElementById("heroToys").innerHTML = [
+        characters[2],
+        characters[0],
+        characters[1],
+      ]
+        .map(toy)
+        .join("");
+      function render() {
+        const n = owned.size;
+        document.getElementById("pointBadge").textContent = `⭐ ${points} pts`;
+        document.getElementById("progressLabel").textContent =
+          `${n} of 8 collected`;
+        document.getElementById("progressPct").textContent =
+          `${Math.round((n / 8) * 100)}% complete`;
+        document.getElementById("progressFill").style.width =
+          `${(n / 8) * 100}%`;
+        document
+          .getElementById("progressTrack")
+          .setAttribute("aria-valuenow", n);
+        const next = n < 4 ? 4 : n < 8 ? 8 : null;
+        document.getElementById("nextReward").textContent = next
+          ? `Next reward: ${next} figurines`
+          : "Collection complete!";
+        document.getElementById("nextRewardHint").textContent = next
+          ? `Just ${next - n} more to go!`
+          : "You found every little buddy ✨";
+        for (const x of [1, 4, 8]) {
+          let el = document.getElementById("reward" + x);
+          let ok = n >= x;
+          el.className = ok ? "check" : "pending";
+          el.textContent = ok ? "✓ Unlocked" : "🔒 Locked";
+        }
+        let shown = characters.filter(
+          (c) =>
+            filter === "all" ||
+            (filter === "owned" ? owned.has(c.id) : !owned.has(c.id)),
+        );
+        document.getElementById("collectionGrid").innerHTML =
+          shown
+            .map(
+              (c) =>
+                `<article class="fig-card ${owned.has(c.id) ? "" : "locked"}"><div class="fig-art" style="--cardbg:${c.bg}"><span class="badge ${owned.has(c.id) ? "owned" : c.rare ? "rare" : ""}">${owned.has(c.id) ? "✓ COLLECTED" : c.rare ? "✦ RARE" : "NOT FOUND"}</span>${toy(c)}${owned.has(c.id) ? "" : '<span class="lock" aria-label="Locked">🔒</span>'}</div><div class="fig-info"><div class="fig-name">${c.name}<span style="font-size:15px">${c.rare ? "✦" : "♡"}</span></div><div class="fig-sub">${c.tag}</div><button data-id="${c.id}">${owned.has(c.id) ? "View figurine ↗" : "How to unlock ↗"}</button></div></article>`,
+            )
+            .join("") ||
+          "<p>No figurines here yet. Explore another filter!</p>";
+        document
+          .querySelectorAll(".fig-info button")
+          .forEach((b) =>
+            b.addEventListener("click", () => details(Number(b.dataset.id))),
+          );
+      }
+      function details(id) {
+        const c = characters.find((x) => x.id === id);
+        const have = owned.has(id);
+        document.getElementById("detailsBody").innerHTML =
+          `<div class="kicker">${have ? "Your collectible" : "Mystery collectible"}</div>${toy(c)}<h2>${c.name}</h2><p>${c.tag}. ${have ? "This little buddy is officially part of your collection!" : "This figurine is still waiting to be discovered. Redeem a code from an eligible Fantuan order to try your luck."}</p><div class="modal-actions"><button class="secondary" id="modalDismiss">Close</button>${have ? "" : `<button class="primary" id="modalUnlock">Try a demo unboxing</button>`}</div>`;
+        document.getElementById("detailsDialog").showModal();
+        document.getElementById("modalDismiss").onclick = () =>
+          document.getElementById("detailsDialog").close();
+        const b = document.getElementById("modalUnlock");
+        if (b)
+          b.onclick = () => {
+            document.getElementById("detailsDialog").close();
+            document.getElementById("scanDialog").showModal();
+          };
+      }
+      function openScan() {
+        document.getElementById("scanDialog").showModal();
+      }
+      document.getElementById("scanHero").onclick = openScan;
+      document.getElementById("missionBtn").onclick = openScan;
+      document.getElementById("closeScan").onclick = () =>
+        document.getElementById("scanDialog").close();
+      document.getElementById("closeDetails").onclick = () =>
+        document.getElementById("detailsDialog").close();
+      document.getElementById("menuBtn").onclick = () =>
+        document
+          .getElementById("collection")
+          .scrollIntoView({ behavior: "smooth" });
+      let toastTimeout;
+      function notice(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => t.classList.remove("show"), 3500);
+      }
+      function confetti() {
+        for (let i = 0; i < 35; i++) {
+          const e = document.createElement("span");
+          e.className = "confetti";
+          e.style.left = Math.random() * 100 + "vw";
+          e.style.background = ["#ef3340", "#ffd861", "#68c6a6", "#84bcf5"][
+            i % 4
+          ];
+          e.style.width = "8px";
+          e.style.height = "13px";
+          e.style.animationDelay = Math.random() * 0.3 + "s";
+          document.body.appendChild(e);
+          setTimeout(() => e.remove(), 2500);
+        }
+      }
+      document.getElementById("revealBtn").onclick = () => {
+        let options = characters.filter((c) => !owned.has(c.id));
+        if (!options.length) {
+          notice("You already collected every figurine! 🎉");
+          document.getElementById("scanDialog").close();
+          return;
+        }
+        const c = options[Math.floor(Math.random() * options.length)];
+        const prev = owned.size;
+        owned.add(c.id);
+        points += 100;
+        persist();
+        render();
+        document.getElementById("scanDialog").close();
+        confetti();
+        notice(`✨ You unlocked ${c.name}! +100 points`);
+        setTimeout(() => details(c.id), 300);
+        if ((prev < 4 && owned.size >= 4) || (prev < 8 && owned.size >= 8))
+          setTimeout(() => notice("🎁 Milestone reward unlocked!"), 1600);
+      };
+      document.querySelectorAll(".tab").forEach(
+        (b) =>
+          (b.onclick = () => {
+            filter = b.dataset.filter;
+            document
+              .querySelectorAll(".tab")
+              .forEach((t) => t.setAttribute("aria-pressed", String(t === b)));
+            render();
+          }),
+      );
+      document.getElementById("resetBtn").onclick = () => {
+        if (
+          !confirm(
+            "Reset your demo collection to the original three figurines?",
+          )
+        )
+          return;
+        owned = new Set([1, 2, 3]);
+        points = 250;
+        filter = "all";
+        document
+          .querySelectorAll(".tab")
+          .forEach((b) =>
+            b.setAttribute("aria-pressed", String(b.dataset.filter === "all")),
+          );
+        persist();
+        render();
+        notice("Demo progress has been reset.");
+      };
+      render();
+    </script>
+  </body>
+</html>
