@@ -1,4 +1,4 @@
-# Coca-Cola × Fantuan — Little Moments Club
+# Coca-Cola × Fantuan — Cola & Collect
 
 A consumer-facing, interactive collectibles campaign website concept. Open `index.html` in any modern browser. No build tools are required.
 
